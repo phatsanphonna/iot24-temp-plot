@@ -71,7 +71,7 @@
     </script>
 
     <script>
-      const ws = new WebSocket("ws://192.168.188.143:8765");
+      const ws = new WebSocket("ws://192.168.1.35:8765");
 
       const clientStatus = document.getElementById("client-status");
       let lastestReceivedAt = 0;
@@ -85,6 +85,7 @@
       };
 
       ws.onmessage = (event) => {
+        console.log(event)
         const message = event.data;
         const value = parseFloat(message);
         if (isNaN(value)) {
